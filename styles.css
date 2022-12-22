@@ -1,0 +1,200 @@
+body {
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.desktop {
+  display: none;
+}
+.container-div {
+  width: 375px;
+  margin: 0 auto;
+}
+.card {
+  width: 288px;
+  height: auto;
+}
+.card-container {
+  position: relative;
+  top: -310px;
+  color: white;
+}
+.card-div {
+  position: absolute;
+}
+.top {
+  right: 15px;
+  box-shadow: 0 50px 70px hsla(278, 68%, 11%, 0.3);
+}
+.top p {
+  margin: -97px 0 0 215px;
+}
+.bottom {
+  top: 90px;
+  left: 15px;
+  box-shadow: 0 50px 70px hsla(278, 68%, 11%, 0.3);
+}
+.bottom .card-details {
+  margin: -145px 0 0 20px;
+}
+.logo {
+  width: 60px;
+  margin-bottom: 30px;
+}
+.bottom .card-details div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom .card-details .num {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.date {
+  margin-right: 20px;
+}
+.form-div {
+  margin: 100px 0;
+}
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+input {
+  height: 45px;
+  border: 2px solid hsl(270, 3%, 87%);
+  border-radius: 8px;
+  font-size: 18px;
+  color: hsl(279, 6%, 55%);
+  font-family: "Space Grotesk", sans-serif;
+  padding-left: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.input-div {
+  margin-bottom: 20px;
+}
+.text {
+  width: 100%;
+}
+label {
+  color: hsl(278, 68%, 11%);
+}
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.inputs input {
+  width: 100%;
+}
+.inputs .m-y {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+.err1,
+.err2,
+.err3 {
+  display: none;
+  color: hsl(0, 100%, 66%);
+}
+button {
+  width: 100%;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background: hsl(278, 68%, 11%);
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal {
+  text-align: center;
+  display: none;
+}
+.modal img {
+  margin-bottom: 30px;
+}
+.modal h1 {
+  margin-bottom: 15px;
+  color: hsl(278, 68%, 11%);
+  font-weight: 400;
+}
+.modal p {
+  margin-bottom: 20px;
+  color: hsl(279, 6%, 55%);
+}
+
+@media (min-width: 850px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .container-div {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: relative;
+    top: -141%;
+  }
+  .card-container {
+    top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-div {
+    position: relative;
+  }
+  .card {
+    width: 400px;
+  }
+  .top {
+    left: 150px;
+    top: 0px;
+  }
+  .top p {
+    margin: -128px 0 0 315px;
+  }
+  .card-back {
+    box-shadow: 50px 50px black;
+  }
+  .bottom {
+    top: -50px;
+  }
+  .bottom .card-details {
+    margin: -200px 0 0 20px;
+  }
+  .logo {
+    width: 100px;
+    margin-bottom: 40px;
+  }
+  .bottom .card-details .num {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  form {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .forms,
+  .modal {
+    margin-top: 100px;
+  }
+}
