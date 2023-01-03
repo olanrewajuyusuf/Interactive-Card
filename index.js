@@ -1,15 +1,15 @@
 const submit = document.querySelector("form");
 const modal = document.querySelector(".modal");
 const form = document.querySelector(".forms");
-const holder = document.querySelector(".name");
+const holder = document.querySelector("#name");
 const cardName = document.querySelector(".card-name");
-const cvc = document.querySelector(".cvc");
+const cvc = document.querySelector("#cvc");
 const cvcNum = document.querySelector(".cvc-num");
 const input = document.querySelectorAll("input");
-const num = document.querySelector(".card-num");
+const num = document.querySelector("#card-num");
 const cardNum = document.querySelector(".num");
-const month = document.querySelector(".month");
-const year = document.querySelector(".year");
+const month = document.querySelector("#month");
+const year = document.querySelector("#year");
 const cardMonth = document.querySelector(".left");
 const cardYear = document.querySelector(".right");
 const numErr = document.querySelector(".err1");
@@ -23,7 +23,7 @@ submit.addEventListener("submit", function (e) {
   form.style.display = "none";
 });
 
-input.forEach((el, ind) => {
+input.forEach((el) => {
   el.addEventListener("focusin", function () {
     el.style.borderColor = "hsl(278, 94%, 30%)";
     el.style.color = "hsl(278, 68%, 11%)";
@@ -31,7 +31,6 @@ input.forEach((el, ind) => {
   el.addEventListener("focusout", function () {
     el.style.borderColor = "hsl(282, 8%, 76%)";
   });
-  //   console.log(ind - 1);
 });
 
 //Cardholder name input
@@ -43,40 +42,24 @@ holder.addEventListener("input", function () {
 });
 
 //Card number input
-
-// num.addEventListener("focusin", function () {
-//   if (num.value === "") {
-//     num.style.borderColor = "hsl(0, 100%, 66%)";
-//     cvcErr.style.display = "block";
-//   } else {
-//     num.style.borderColor = "hsl(282, 8%, 76%)";
-//     cvcErr.style.display = "none";
-//   }
-// });
 num.addEventListener("input", function () {
-  let string = "abcdefghijklmnopqrstuvwxyz";
-  let val = num.value;
-  for (let i = 0; i < string.length; i++) {
-    if (val.includes(string[i])) {
-      num.style.borderColor = "hsl(0, 100%, 66%)";
-      numErr.style.display = "block";
-    } else if (!val.includes(string[i])) {
-      //   num.style.borderColor = "hsl(270, 3%, 87%)";
-      //   numErr.style.display = "none";
-    }
-  }
-  let x = num.value;
-  let y =
-    x.slice(0, 4) +
-    " " +
-    x.slice(4, 8) +
-    " " +
-    x.slice(8, 12) +
-    " " +
-    x.slice(12);
-  cardNum.innerHTML = y;
+  // add space to string input
+  num.value = num.value
+    .replace(/[^0-9A-Za-z]/g, "")
+    .replace(/(.{4})/g, "$1 ")
+    .trim();
+
+  cardNum.innerHTML = num.value;
   if (num.value === "") {
     cardNum.innerHTML = "0000 0000 0000 0000";
+  }
+  // display error if input includes letter
+  if (/[A-Za-z]/.test(num.value)) {
+    num.style.borderColor = "hsl(0, 100%, 66%)";
+    numErr.style.display = "block";
+  } else {
+    num.style.borderColor = "hsl(270, 3%, 87%)";
+    numErr.style.display = "none";
   }
 });
 

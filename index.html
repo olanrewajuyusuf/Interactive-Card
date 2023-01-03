@@ -51,9 +51,9 @@
           <form action="#">
             <div class="forms">
               <div class="input-div">
-                <label for="">CARDHOLDER NAME </label
+                <label for="name">CARDHOLDER NAME </label
                 ><input
-                  class="text name"
+                  id="name"
                   type="text"
                   name="name"
                   placeholder="e.g Olanre Yusuf"
@@ -61,11 +61,12 @@
                 />
               </div>
               <div class="input-div">
-                <label for="">CARD NUMBER </label
+                <label for="card-num">CARD NUMBER </label
                 ><input
-                  class="text card-num"
+                  id="card-num"
                   type="text"
                   name="number"
+                  maxlength="19"
                   placeholder="e.g 1234 5678 9123 0000"
                   required
                 />
@@ -73,19 +74,22 @@
               </div>
               <div class="inputs">
                 <div class="mon-year">
-                  <label for="">EXP. DATE (MM/YY) </label>
+                  <label for="month">EXP. DATE (MM/YY) </label>
                   <div class="m-y">
                     <input
-                      class="month"
+                      id="month"
                       type="number"
                       name="expire"
+                      max="12"
                       placeholder="MM"
                       required
                     />
                     <input
-                      class="year"
+                      id="year"
                       type="number"
                       name="expire"
+                      min="22"
+                      max="30"
                       placeholder="YY"
                       required
                     />
@@ -93,11 +97,12 @@
                   <p class="error err2">Can't be blank</p>
                 </div>
                 <div>
-                  <label for="">CVC </label
+                  <label for="cvc">CVC </label
                   ><input
-                    class="cvc"
+                    id="cvc"
                     type="number"
                     name="cvc"
+                    max="999"
                     placeholder="e.g 123"
                     required
                   />
