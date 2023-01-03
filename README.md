@@ -15,14 +15,14 @@ Users will be able to:
 
 ### Screenshot
 
-![](./Interactive card-1.png)
-![](./Interactive card-2.png)
-![](./Interactive card-3.png)
+![](./Interactivecard-1.png)
+![](./Interactivecard-2.png)
+![](./Interactivecard-3.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://github.com/olanrewajuyusuf/Interactive-Card)
+- Live Site URL: (https://wallewdev-interactive-card.netlify.app/)
 
 ## My process
 
